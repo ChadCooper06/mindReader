@@ -94,11 +94,11 @@ function bigButton() {
 
 OBJECTS
 
-div container for page
-div container for header text area
-div container for bigButton
-div container for smallText
-div container for navButton
+* div container for page
+* div container for header text area
+* div container for bigButton
+* div container for smallText
+* div container for navButton
 
 
 
