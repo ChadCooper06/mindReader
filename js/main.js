@@ -108,14 +108,14 @@ let scroll = document.getElementById("scroll");
     //array of symbols
 let mySymbols = ["~", "!", "$", "#", "^", "&", "*", "@", "%"];
 
-//let symbol=mysymbols[i%9]
+//create a temp symbol that can be accessed
 var tempSymbol = null;
     
-
-//scroll.append(li)
+//function that makes the symbols
 function symbolOptions() {
-    
+    //call my scroll from html and set it to an empty string
     scroll.innerHTML = "";
+    //for loop that determines the symbols of the list
     for (let i=0; i<100; i++) {
         let symbol = mySymbols[i % 9];
         var currentSymbol = symbol;
