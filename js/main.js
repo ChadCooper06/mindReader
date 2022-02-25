@@ -7,11 +7,47 @@ const navBtn = document.getElementById("navBtn");
         navBtn.addEventListener('click', pg1);
     }
 
+function hide(id){
+    document.getElementById(id).style.display='none';
+}
 
+function show(id){
+    document.getElementById(id).style.display='block';
+}
+
+//create starting symbol that is also the %9 symbol
+//let startSymbol = "~";
+
+//create array of symbols
+
+//let mySymbols = ["~", "!", "$", "#", "^", "&", "*", "@", "%", "|"];
+
+//array of numbers
+
+//let yourSymbol = mySymbols[Math.floor(Math.random(num) + mySymbols.length)];
+ //  for (let i=0; i<100; i++){
+//        if (i===0 || i % (mySymbols.length)) {
+//            return mySymbols[0];
+//        }
+//        return random[i];
+//    }
+
+
+//APPEND CHILD
+
+
+//create function that pulls a random symbol from the array
+
+//function randomSymbol(){
+  //  for (let i=0; i<=symbols.length, i++) {
+   //     return 
+   // }
+//}
 
 //create functions for each page with what they have on them and what they dont
 function pg1() {
     document.getElementById("headerText").innerHTML = "I can read your mind";
+    hide("scroller");
     //document.getElementById("scroller").innerHTML ='none';
     document.getElementById("navBtn").innerHTML = "GO";
     document.getElementById("nextBtn").style.display = "none";
@@ -25,6 +61,7 @@ pg1();
 
 function pg2() {
     document.getElementById("headerText").innerHTML = "Choose a number between 01-99";
+    hide("scroller");
     //document.getElementById("scroller").innerHTML ='none';
     document.getElementById("navBtn").innerHTML = "NO";
     document.getElementById("nextBtn").style.display = 'block';
@@ -37,6 +74,7 @@ function pg2() {
 
 function pg3() {
     document.getElementById("headerText").innerHTML = "Add both digits together to get a new number";
+    hide("scroller");
     //document.getElementById("scroller").innerHTML ='none';
     document.getElementById("navBtn").innerHTML = "NO";
     document.getElementById("nextBtn").style.display = 'block';
@@ -49,6 +87,7 @@ function pg3() {
 
 function pg4() {
     document.getElementById("headerText").innerHTML = "Subtract your new number from the original number";
+    hide("scroller");
     //document.getElementById("scroller").innerHTML ='none';
     document.getElementById("navBtn").innerHTML = "NO";
     document.getElementById("nextBtn").style.display = 'block';
@@ -59,9 +98,31 @@ function pg4() {
     navBtn.addEventListener('click', pg1);
 };
 
+
+//let scrollBar = document.getElementById("scroller").appendChild(document.appendChild("li"));
+
+//create array of symbols
+/*
+let mySymbols = ["~", "!", "$", "#", "^", "&", "*", "@", "%", "|"];
+
+//array of numbers
+
+function yourSymbol () {
+
+let symbol = mySymbols[Math.floor(Math.random(num) + mySymbols.length)];
+   for (let i=0; i<100; i++){
+        if (i===0 || i % (mySymbols.length)) {
+            return mySymbols[0];
+        }
+        return symbol;
+    }
+   
+*/
+
 function pg5() {
     //display the choices in a scrolling format and 
-    document.getElementById("headerText").innerHTML = ["0-!", "1-$", "2-&", "3-#", "4-@", "5-*"];
+    document.getElementById("headerText").innerHTML="";
+    show("scroller");
     //document.getElementById("scroller").innerHTML ='block';
     document.getElementById("navBtn").innerHTML = "NO";
     document.getElementById("nextBtn").style.display = 'block';
@@ -72,9 +133,12 @@ function pg5() {
     navBtn.addEventListener('click', pg1);
 };
 
+
 function pg6() {
+    
     //return the result of a function that mathematically determines the symbol that is shown
-    document.getElementById("headerText").innerHTML = "lorem ipsum";
+    document.getElementById("headerText").innerHTML = "yourSymbol()";
+    hide("scroller");
     //document.getElementById("scroller").innerHTML ='none';
     document.getElementById("navBtn").innerHTML = "NO";
     document.getElementById("nextBtn").style.display = "none";
@@ -83,6 +147,10 @@ function pg6() {
     nextBtn.removeEventListener('click', pg2, pg3, pg4, pg5, pg6, {once:true});
     navBtn.addEventListener('click', pg1);
 };
+
+function randomSymbol() {
+
+}
 
 //function scroller(){
 
