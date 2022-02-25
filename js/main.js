@@ -102,22 +102,30 @@ function pg4() {
 //let scrollBar = document.getElementById("scroller").appendChild(document.appendChild("li"));
 
 //create array of symbols
-/*
-let mySymbols = ["~", "!", "$", "#", "^", "&", "*", "@", "%", "|"];
 
-//array of numbers
+//global variable
 
-function yourSymbol () {
+let symbol = "";
+function scrollbar(){
+    let mySymbols = ["~", "!", "$", "#", "^", "&", "*", "@", "%"];
 
-let symbol = mySymbols[Math.floor(Math.random(num) + mySymbols.length)];
-   for (let i=0; i<100; i++){
-        if (i===0 || i % (mySymbols.length)) {
-            return mySymbols[0];
+    //array of numbers
+
+    let yourSymbol = mySymbols[Math.floor(Math.random() *9)];
+       symbol = yourSymbol;
+        let num = "";
+        for (let i=0; i<100; i++){
+            if (i % 9===0 ){
+                num = num + i + "-" + yourSymbol + "\n";
+        
+            } else {
+                let random = mySymbols[Math.floor(Math.random()*9)] 
+                num = num + i + "-" + random + "\n";
+            }
+        
         }
-        return symbol;
-    }
-   
-*/
+   return num;
+}
 
 function pg5() {
     //display the choices in a scrolling format and 
@@ -137,20 +145,18 @@ function pg5() {
 function pg6() {
     
     //return the result of a function that mathematically determines the symbol that is shown
-    document.getElementById("headerText").innerHTML = "yourSymbol()";
+    document.getElementById("headerText").innerText = symbol;
     hide("scroller");
     //document.getElementById("scroller").innerHTML ='none';
     document.getElementById("navBtn").innerHTML = "NO";
     document.getElementById("nextBtn").style.display = "none";
-    document.getElementById("smallText").innerHTML = "Your symbol is: lorem ipsum";
+    document.getElementById("smallText").innerHTML = `Your symbol is: ${symbol}`;
     
     nextBtn.removeEventListener('click', pg2, pg3, pg4, pg5, pg6, {once:true});
     navBtn.addEventListener('click', pg1);
 };
 
-function randomSymbol() {
 
-}
 
 //function scroller(){
 
