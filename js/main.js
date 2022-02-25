@@ -117,7 +117,7 @@ function symbolOptions() {
     scroll.innerHTML = "";
     //for loop that determines the symbols of the list
     for (let i=0; i<100; i++) {
-        let symbol = mySymbols[i % 9];
+        let symbol = mySymbols[i % 9]
         var currentSymbol = symbol;
         if (i % 9===0 ){
             if(tempSymbol == null){
