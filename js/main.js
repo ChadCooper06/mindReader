@@ -99,38 +99,55 @@ function pg4() {
 };
 
 
-//let scrollBar = document.getElementById("scroller").appendChild(document.appendChild("li"));
 
-//create array of symbols
+//global variables
+//let scroll document.getelbyid
+let scroll = document.getElementById("scroll");
+//function that creates the scrollbar
 
-//global variable
+    //array of symbols
+let mySymbols = ["~", "!", "$", "#", "^", "&", "*", "@", "%"];
 
-let symbol = "";
-function scrollbar(){
-    let mySymbols = ["~", "!", "$", "#", "^", "&", "*", "@", "%"];
+//let symbol=mysymbols[i%9]
+var tempSymbol = null;
+    
 
-    //array of numbers
-
-    let yourSymbol = mySymbols[Math.floor(Math.random() *9)];
-       symbol = yourSymbol;
-        let num = "";
-        for (let i=0; i<100; i++){
-            if (i % 9===0 ){
-                num = num + i + "-" + yourSymbol + "\n";
-        
-            } else {
-                let random = mySymbols[Math.floor(Math.random()*9)] 
-                num = num + i + "-" + random + "\n";
+//scroll.append(li)
+function symbolOptions() {
+    
+    scroll.innerHTML = "";
+    for (let i=0; i<100; i++) {
+        let symbol = mySymbols[i % 9];
+        var currentSymbol = symbol;
+        if (i % 9===0 ){
+            if(tempSymbol == null){
+                tempSymbol = symbol;
+                currentSymbol = tempSymbol;
             }
-        
         }
-   return num;
+        //
+        const listItem = document.createElement("li");
+        listItem.textContent = `${i} - ${currentSymbol}`;
+        scroll.appendChild(listItem);
+    }
+        //let num = "";
+        /*for (let i=0; i<100; i++){
+        
+        }*/
+
 }
 
+
+
+
+
 function pg5() {
-    //display the choices in a scrolling format and 
-    document.getElementById("headerText").innerHTML="";
+    document.getElementById("headerText").innerHTML = "";
+    //display the choices in a scrolling format
+    //call function
+    symbolOptions()
     show("scroller");
+    
     //document.getElementById("scroller").innerHTML ='block';
     document.getElementById("navBtn").innerHTML = "NO";
     document.getElementById("nextBtn").style.display = 'block';
@@ -145,12 +162,13 @@ function pg5() {
 function pg6() {
     
     //return the result of a function that mathematically determines the symbol that is shown
-    document.getElementById("headerText").innerText = symbol;
+    let stuff = tempSymbol;
+    document.getElementById("headerText").innerText = stuff;
     hide("scroller");
     //document.getElementById("scroller").innerHTML ='none';
     document.getElementById("navBtn").innerHTML = "NO";
     document.getElementById("nextBtn").style.display = "none";
-    document.getElementById("smallText").innerHTML = `Your symbol is: ${symbol}`;
+    document.getElementById("smallText").innerHTML = `Your symbol is: ${stuff}`;
     
     nextBtn.removeEventListener('click', pg2, pg3, pg4, pg5, pg6, {once:true});
     navBtn.addEventListener('click', pg1);
