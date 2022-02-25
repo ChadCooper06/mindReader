@@ -3,36 +3,56 @@ h1,p {
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     color:rgb(27, 206, 206);
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
+    /*padding-left: 25vw;*/
 }
 
 #scroller{
-    margin-top: 50px;
-    height: 500px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    height: 200px;
     overflow-y: scroll;
+    overflow-wrap: break-word;
     justify-content: center;
     text-align: center;
+    position: relative;
+    max-height: 100px;
 }
 
-#navBtn{
+#navBtn {
     background-color: rgb(242, 248, 248);
     color:rgb(27, 206, 206);
     text-align: center;
     justify-content: center;
     font-size: 40px;
-    border-radius: 80px;
+    border-radius: 100%;
     border: white 1px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#nextBtn {
+    background-color: rgb(27, 206, 206);
+    color: white;
+    border: none;
+    font-size: xx-large;
+
 }
 
 header {
     font-size: larger;
     justify-content: center;
     text-align: center;
-    height: fit-content;
-    overflow-wrap: break-word;
-}
-
-middle {
-    align-items: flex-end;
+    height: auto;
+    overflow-y: break-word;
+    min-height: 300px;
+    max-height: 50vh;
     
 }
+
+/*middle {
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}*/
